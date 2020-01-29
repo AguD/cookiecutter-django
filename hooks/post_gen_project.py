@@ -92,9 +92,9 @@ def remove_packagejson_file():
 def remove_celery_files():
     file_names = [
         os.path.join("config", "celery_app.py"),
-        os.path.join("{{ cookiecutter.project_slug }}", "users", "tasks.py"),
+        os.path.join("{{ cookiecutter.apps_dir }}", "users", "tasks.py"),
         os.path.join(
-            "{{ cookiecutter.project_slug }}", "users", "tests", "test_tasks.py"
+            "{{ cookiecutter.apps_dir }}", "users", "tests", "test_tasks.py"
         ),
     ]
     for file_name in file_names:
@@ -289,7 +289,7 @@ def remove_aws_dockerfile():
 
 def remove_drf_starter_files():
     os.remove(os.path.join("config", "api_router.py"))
-    shutil.rmtree(os.path.join("{{cookiecutter.project_slug}}", "users", "api"))
+    shutil.rmtree(os.path.join("{{cookiecutter.apps_dir}}", "users", "api"))
 
 
 def main():
